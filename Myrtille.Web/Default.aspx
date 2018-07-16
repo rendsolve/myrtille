@@ -35,6 +35,7 @@
         
         <title>Myrtille</title>
         
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
         <link rel="icon" type="image/png" href="img/myrtille.png"/>
         <link rel="stylesheet" type="text/css" href="css/Default.css"/>
 
@@ -77,38 +78,33 @@
             <!-- *** LOGIN                                                                                                                                                                      *** -->
             <!-- ********************************************************************************************************************************************************************************** -->
             
-            <div runat="server" id="login" visible="false">
-
+            <div runat="server" id="login" class="loginer" visible="false">
+             <h2 class="rdp">RDP</h2>
                 <!-- customizable logo -->
-                <div runat="server" id="logo"></div>
 
                 <!-- standard mode -->
                 <div runat="server" id="domainServerDiv">
                     
                     <!-- server -->
                     <div class="inputDiv">
-                        <label id="serverLabel" for="server">Server (:port)</label>
-                        <input type="text" runat="server" id="server" title="server address or hostname (:port, if other than the standard 3389). use [] for ipv6. CAUTION! if using a hostname or if you have a connection broker, make sure the DNS is reachable by myrtille (or myrtille has joined the domain)"/>
+                        <input type="text" placeholder="Server IP" runat="server" id="server" title="server address or hostname (:port, if other than the standard 3389). use [] for ipv6. CAUTION! if using a hostname or if you have a connection broker, make sure the DNS is reachable by myrtille (or myrtille has joined the domain)"/>
                     </div>
 
                     <!-- domain -->
-                    <div class="inputDiv">
-                        <label id="domainLabel" for="domain">Domain (optional)</label>
-                        <input type="text" runat="server" id="domain" title="user domain (if applicable)"/>
+                    <div class="inputDiv domainField">
+                        <input type="text" placeholder="Domain (optional)" runat="server" id="domain" title="user domain (if applicable)"/>
                     </div>
 
                 </div>
                 
                 <!-- user -->
                 <div class="inputDiv">
-                    <label id="userLabel" for="user">User</label>
-                    <input type="text" runat="server" id="user" title="user name"/>
+                    <input type="text" placeholder="Username" runat="server" id="user" title="user name"/>
                 </div>
 
                 <!-- password -->
                 <div class="inputDiv">
-                    <label id="passwordLabel" for="password">Password</label>
-                    <input type="password" runat="server" id="password" title="user password"/>
+                    <input type="password" placeholder="Password" runat="server" id="password" title="user password"/>
                 </div>
 
                 <!-- hashed password (aka password 51) -->
@@ -127,17 +123,10 @@
                 </div>
 
                 <!-- connect -->
-                <input type="submit" runat="server" id="connect" value="Connect!" onserverclick="ConnectButtonClick" title="open session"/>
+                <div class="cer"><input type="submit" runat="server" id="connect" value="Connect" onserverclick="ConnectButtonClick" title="open session"/></div>
 
                 <!-- myrtille version -->
-                <div id="version">
-                    <a href="http://cedrozor.github.io/myrtille/" title="myrtille">
-                        <img src="img/myrtille.png" alt="myrtille" width="15px" height="15px"/>
-                    </a>
-                    <span>
-                        <%=typeof(Default).Assembly.GetName().Version%>
-                    </span>
-                </div>
+                
 
                 <!-- connect error -->
                 <div id="errorDiv">
@@ -212,9 +201,6 @@
 
                 <!-- send a right-click on the next touch or left-click action. may be useful on touchpads or iOS devices -->
                 <input type="button" runat="server" id="mrc" value="Right-Click OFF" onclick="toggleRightClick(this);" title="if toggled on, send a Right-Click on the next touch or left-click action" disabled="disabled"/>
-
-                <!-- share session -->
-                <input type="button" runat="server" id="share" value="Share" onclick="openPopup('shareSessionPopup', 'ShareSession.aspx');" title="share session" disabled="disabled"/>
 
                 <!-- disconnect -->
                 <input type="button" runat="server" id="disconnect" value="Disconnect" onserverclick="DisconnectButtonClick" title="disconnect session" disabled="disabled"/>

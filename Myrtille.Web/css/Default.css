@@ -22,7 +22,7 @@ body
 {
     padding: 0px;
     margin: 0px;
-    background-color: #34495e;
+    /*background-color: #34495e;*/background-color:#fff;
     color: #ecf0f1;
 }
 
@@ -45,15 +45,56 @@ a img
 /*****************************************************************************************************************************************************************************************************/
 /*** LOGIN                                                                                                                                                                                         ***/
 /*****************************************************************************************************************************************************************************************************/
-
+h2.rdp {
+    color: #979696;
+    font-family: montserrat;
+    font-size: 14px;
+    margin: 0 0 4px;
+    padding-left: 0;
+    text-align: left;
+}
+.cer {
+    text-align: center;
+}
+.cer input[type="submit"]#connect {
+    background-color: #46b1ee;
+    border-radius: 0;
+    color: #242424;
+    float: none;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px auto 5px;
+    text-transform: uppercase;
+    width: 70%;
+    padding: 17px 18px;
+    border:none;
+}
+.loginer .inputDiv {display:block;}
+#login.loginer .inputDiv input {
+    background-color: #505155;
+    border: medium none;
+    box-shadow: none;
+    color: #979696;
+    font-family: montserrat;
+    font-weight: normal;
+    margin-bottom: 6px;
+    padding: 22px 18px;
+    width:90%;
+    font-size:13px;
+}
+#login .domainField{
+    display: none;
+}
+#login.loginer .inputDiv input:focus {border-bottom:2px solid rgb(255, 77, 77);}
 #login
 {
     position: absolute;
     top: 50%;
-    left: 50%;
-    margin-top: -150px;
-    margin-left: -150px;
-    width: 450px;
+    left: 0;
+    right: 0;
+    margin: -150px auto 0;
+    width: 400px;
     height: 300px;
 }
 
@@ -185,7 +226,7 @@ label,
 #serverInfo
 {
     float: left;
-    width: 12%;
+    width: 14%;
 }
 
 /* controls */
@@ -198,11 +239,10 @@ label,
 #files,
 #cad,
 #mrc,
-#share,
 #disconnect
 {
     float: left;
-    width: 10%;
+    width: 12%;
 }
 
 /* stat, debug and browser mode are now disabled by default (to enable for test or diagnostic, just comment out the css below and tweak the controls width above) */
@@ -336,7 +376,7 @@ label,
 #editHostSessionPopupInner
 {
     width: 400px;
-    height: 450px;
+    height: 400px;
 }
 
 #editHostSessionPopupInner
@@ -360,71 +400,6 @@ label,
 {
     width: 370px;
 }
-
-/* share session popup*/
-
-#shareSessionPopup,
-#shareSessionPopupInner
-{
-    width: 400px;
-    height: 300px;
-}
-
-#shareSessionPopupInner
-{
-    color: #000;
-    background: #fff;
-}
-
-#shareSessionPopupTitle
-{
-    padding-top: 20px;
-    padding-left: 10px;
-}
-
-.shareSessionPopupInput
-{
-    padding-left: 10px;
-}
-
-
-/* change password popup */
-
-#changePasswordPopup,
-#changePasswordPopupInner
-{
-    width: 400px;
-    height: 330px;
-}
-
-#changePasswordPopupInner
-{
-    color: #000;
-    background: #fff;
-}
-
-#changePasswordPopupTitle
-{
-    padding-top: 20px;
-    padding-left: 10px;
-}
-
-.changePasswordMessage{
-    padding-left: 10px;
-}
-
-.changePasswordPopupInput
-{
-    padding-left: 10px;
-}
-
-#changeError {
-    padding-left: 10px;
-    font-size: 10pt;
-    color: red;
-    width:380px;
-}
-
 
 /* remote session display */
 
